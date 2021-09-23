@@ -1,4 +1,4 @@
-# meet
+[readme .pdf](https://github.com/ericmarcellini/meet/files/7218545/readme.pdf)
 
 Objective:
 To build a serverless, progressive web application (PWA) with React using a test-driven
@@ -75,4 +75,4 @@ Given the user opens the app
 When clicks on an event
 Then A chart showing upcoming events for each city should display
 
-
+[readme .pdf](https://github.com/ericmarcellini/meet/files/7218545/readme.pdf)
