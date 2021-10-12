@@ -12,7 +12,7 @@ class NumberOfEvents extends Component {
             <div className="NumberOfEvents">
                 <input
                 type="text"
-                classname="numberEvents"
+                className="numberEvents"
                 value={events}>
                 </input>
             </div>

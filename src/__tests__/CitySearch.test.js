@@ -1,14 +1,14 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { shallow, mount } from "enzyme";
 import CitySearch from "../CitySearch";
 import { mockData } from "../mock-data";
-import { extractLocations } from "../api";
+import { extractLocations, getEvents } from "../api";
 
 describe("<CitySearch /> component", () => {
   let locations, CitySearchWrapper;
   beforeAll(() => {
     locations = extractLocations(mockData);
-    CitySearchWrapper = shallow(<CitySearch locations={locations} />);
+    CitySearchWrapper = shallow(<CitySearch locations={locations} updateEvents={() => {}} />);
   });
   
   test("render text input", () => {
@@ -67,6 +67,15 @@ describe("<CitySearch /> component", () => {
     CitySearchWrapper.find(".suggestions li").at(0).simulate("click");
     expect(CitySearchWrapper.state("query")).toBe(suggestions[0]);
   });
+
+  test ('get list of all events when user selects "See all cities"', async () => {
+    const AppWrapper = mount (<App />);
+    const suggestionItems = AppWrapper.find(CitySearch).find('.suggestions li');
+    await suggestionItems.at(suggestionItems.length - 1).simulate('click');
+    const allEvents = await getEvents();
+    expect(AppWrapper.state('events')).toEqual(allEvents);
+    AppWrapper.unmount();
+  })
 });
 
 
