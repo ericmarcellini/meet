@@ -75,7 +75,7 @@ import NProgress from "nprogress";
  };
 
  export const getAccessToken = async () => {
-  const getAccessToken = localStorage.getItem('access_token');  
+  const accessToken = localStorage.getItem('access_token');  
   const tokenCheck = getAccessToken && (await checkToken(accessToken));
     if(!accessToken || tokenCheck.error){
       await localStorage.removeItem("access_token");
