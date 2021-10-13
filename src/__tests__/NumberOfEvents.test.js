@@ -12,3 +12,4 @@ describe("<NumberOfEvents /> component", () => {
         expect(NumberOfEventsWrapper.find(".NumberOfEvents")).toHaveLength(1);
       });
   });
+
