@@ -3,6 +3,7 @@ import { shallow, mount } from "enzyme";
 import CitySearch from "../CitySearch";
 import { mockData } from "../mock-data";
 import { extractLocations, getEvents } from "../api";
+import App from "../app";
 
 describe("<CitySearch /> component", () => {
   let locations, CitySearchWrapper;
@@ -68,14 +69,21 @@ describe("<CitySearch /> component", () => {
     expect(CitySearchWrapper.state("query")).toBe(suggestions[0]);
   });
 
-  test ('get list of all events when user selects "See all cities"', async () => {
-    const AppWrapper = mount (<App />);
-    const suggestionItems = AppWrapper.find(CitySearch).find('.suggestions li');
-    await suggestionItems.at(suggestionItems.length - 1).simulate('click');
-    const allEvents = await getEvents();
-    expect(AppWrapper.state('events')).toEqual(allEvents);
-    AppWrapper.unmount();
-  })
+  test('selecting CitySearch input reveals the suggestions list', () =>{
+    CitySearchWrapper.find('.city').simulate('focus');
+    expect(CitySearchWrapper.state('showSuggestions')).toBe(true);
+    expect(CitySearchWrapper.find('.suggestions').prop('style')).not.toEqual({ display: 'none' });
+  });
+
+  test('selecting a suggestion should hide the suggestions list',()=>{
+    CitySearchWrapper.setState({
+      query: 'Berlin',
+      showSuggestions: undefined
+    });
+    CitySearchWrapper.find('.suggestions li').at(0).simulate('click');
+    expect(CitySearchWrapper.state('showSuggestions')).toBe(false);
+    expect(CitySearchWrapper.find('.suggestions').prop('style')).toEqual({ display: 'none' });
+  });
 });
 
 
