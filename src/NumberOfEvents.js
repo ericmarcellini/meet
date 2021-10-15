@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import { mockData } from "./mock-data";
-import { getEvents, extractLocations } from './api';
 
 class NumberOfEvents extends Component {
     state = {
@@ -25,7 +23,7 @@ class NumberOfEvents extends Component {
                 type="number"
                 className="numberEvents"
                 value={this.state.numberOfEvents}
-                onChange={(e)=> this.handleInputChanged(e)}>
+                onChange={(e)=> this.updateEventNumber(e.target.value)}>
                 </input>
             </div>
         )
