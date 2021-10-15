@@ -3,6 +3,7 @@ import Event from './Event';
 
 class EventList extends Component {
     render(){
+        const { events } = this.props;
         return (
           <div>
           <ul className="EventList">
