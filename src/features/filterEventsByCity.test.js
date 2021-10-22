@@ -25,7 +25,7 @@ defineFeature(feature, test => {
     test('User should see a list of suggestions when they search for a city', ({ given, when, then }) => {
         let CitySearchWrapper;
         given('the main page is open', () => {
-            CitySearchWrapper = shallow(<CitySearch updateEvents ={()=>{}} locations={locations} />)
+            CitySearchWrapper = shallow(<CitySearch updateEvents ={()=>{}} locations={extractLocations(mockData)} />)
         });
 
         when('the user starts typing in the city textbox', () => {
@@ -38,7 +38,7 @@ defineFeature(feature, test => {
     });
   
   
-    test('User can select a city from the suggested list', ({ given, and, when, then }) => {
+    test('User can select a city from the suggested list', ({ given, and, when, then,}) => {
         let AppWrapper;
         given("user was typing “Berlin” in the city textbox", async () => {
           AppWrapper = await mount(<App />);

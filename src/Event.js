@@ -16,7 +16,7 @@ class Event extends Component {
         let event = this.props.event;
     
         return (
-            <ul className="Event">
+            <ul className="event">
               <li className="Summary">{event.summary}</li>
               <li className="Location">{event.location}</li>
               <li className="Date">start: {event.start.dateTime}</li>
