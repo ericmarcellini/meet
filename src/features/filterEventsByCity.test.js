@@ -5,12 +5,19 @@ import { mockData } from '../mock-data';
 import { loadFeature, defineFeature } from 'jest-cucumber';
 import CitySearch from '../CitySearch';
 import { extractLocations } from '../api';
-
+const mockLocation = extractLocations(mockData);
 const feature = loadFeature('./src/features/filterEventsByCity.feature');
 
 defineFeature(feature, test => {
-    test("When user hasn’t searched for a city, show upcoming events from all cities.", ({given, when, then, }) => {
-        given("user hasn’t searched for any city", () => {});
+    test("When user hasn’t searched for a city, show upcoming events from all cities.", 
+    ({given, 
+        when, 
+        then, }) => {
+
+        given("user hasn’t searched for any city", () => {
+
+        });
+        
         let AppWrapper;
         when("the user opens the app", () => {
           AppWrapper = mount(<App />);
@@ -18,14 +25,18 @@ defineFeature(feature, test => {
     
         then("the user should see the list of upcoming events.", () => {
           AppWrapper.update();
-          expect(AppWrapper.find(".event")).toHaveLength(32);
+          expect(AppWrapper.find(".event")).toHaveLength(mockData.length);
         });
     });
   
-    test('User should see a list of suggestions when they search for a city', ({ given, when, then }) => {
+    test('User should see a list of suggestions when they search for a city', 
+    ({ given, 
+        when, 
+        then }) => {
+
         let CitySearchWrapper;
         given('the main page is open', () => {
-            CitySearchWrapper = shallow(<CitySearch updateEvents ={()=>{}} locations={extractLocations(mockData)} />)
+            CitySearchWrapper = shallow(<CitySearch updateEvents ={()=>{}} locations={mockLocation} />)
         });
 
         when('the user starts typing in the city textbox', () => {
@@ -38,7 +49,12 @@ defineFeature(feature, test => {
     });
   
   
-    test('User can select a city from the suggested list', ({ given, and, when, then,}) => {
+    test('User can select a city from the suggested list', 
+    ({ given, 
+        and, 
+        when, 
+        then,}) => {
+
         let AppWrapper;
         given("user was typing “Berlin” in the city textbox", async () => {
           AppWrapper = await mount(<App />);
