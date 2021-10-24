@@ -27,4 +27,4 @@ reportWebVitals();
 
 
 atatus.config('c855e7517275499cad81f3dc336487dd').install();
-atatus.notify(new Error('Test Atatus Setup'));
+
