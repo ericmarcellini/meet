@@ -1,12 +1,11 @@
 {
   "short_name": "Meet",
-  "name": "Meet App",
+  "name": "MeetApp",
   "icons": [
     {
       "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
+      "sizes": "48x48",
       "type": "image/x-icon",
-      "purpose": "any maskable"
     },
     {
       "src": "meet-app-192.png",
@@ -21,7 +20,7 @@
       "purpose": "any maskable"
     }
   ],
-  "start_url": "https://ericmarcellini.github.io/meet/",
+  "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff"
