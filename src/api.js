@@ -52,18 +52,19 @@ import NProgress from "nprogress";
   };
 
 
- export const getEvents = async () => {
-   NProgress.start();
-
-   if (window.location.href.startsWith('http://localhost')){
-     return mockData;
-   };
-
-   if (!navigator.onLine) {
-    const data = localStorage.getItem("lastEvents");
-    NProgress.done();
-    return data?JSON.parse(events).events:[];;
-  };
+  export const getEvents = async () => {
+    NProgress.start(); 
+  
+    if (window.location.href.startsWith('http://localhost')) {
+      NProgress.done();
+       return mockData;
+     }
+  
+     if (!navigator.onLine) {
+      const events  = await localStorage.getItem("lastEvents");
+      NProgress.done();
+      return  events?JSON.parse(events).events:[];
+    }
 
    const token = await getAccessToken();
    if (token){
