@@ -2,6 +2,7 @@
 .App {
   text-align: center;
   padding: 2% 5%;
+  background-color: #494949;
 }
 
 .App * {
@@ -11,6 +12,7 @@
 ul {
   padding: 0;
   list-style: none;
+  color: whitesmoke;
 }
 
 p {
@@ -22,6 +24,37 @@ p {
 }
 .showSuggestions {
   display: block;
+}
+
+
+
+h1 {
+  text-align: center;
+  font-family: 'Oswald', Helvetica, sans-serif;
+  font-size: 80px;
+  transform: skewY(-10deg);
+  letter-spacing: 4px;
+  word-spacing: -8px;
+  color: tomato;
+  text-shadow: 
+    -1px -1px 0 firebrick,
+    -2px -2px 0 firebrick,
+    -3px -3px 0 firebrick,
+    -4px -4px 0 firebrick,
+    -5px -5px 0 firebrick,
+    -6px -6px 0 firebrick,
+    -7px -7px 0 firebrick,
+    -8px -8px 0 firebrick,
+    -30px 20px 40px dimgrey
+}
+
+h4 {
+  color: white;
+  padding: 0;
+}
+
+body {
+  background: radial-gradient(600px at 50% 50% , #fff 20%, #000 100%);
 }
 
 input[type="text"],
@@ -60,12 +93,15 @@ input[type="number"] {
   box-shadow: 10px 10px 16px -12px rgba(0, 0, 0, 0.75);
 }
 
+
+
 .suggestions > li {
   text-align: left;
   padding: 8px 6px 8px 10px;
-  background-color: #eee;
+  background-color: #494949;
   cursor: default;
 }
+
 
 .suggestions > li:last-child {
   border-bottom-left-radius: 4px;
@@ -81,23 +117,56 @@ input[type="number"] {
   margin-bottom: 10px;
   text-align: center;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 5%;
   position: relative;
+  box-shadow: 10px 10px 16px -12px rgba(0, 0, 0, 0.75);
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
+
+
 .Summary {
+  font-weight: bold;
+  color: aqua
+}
+
+.Location {
   font-weight: bold;
 }
 
 .details-btn {
   position: absolute;
+  background: #E74C3C;
   right: 5px;
   bottom: 5px;
-  padding: 5px 8px;
-  border-radius: 4px;
-  outline: none;
+  overflow: hidden;
+  z-index: 1;
   cursor: pointer;
+  transition: color .3s;
+  padding: 5px 8px;
+  /* Typo */
+  line-height: 10px;
+  text-align: center;
+  color: #fff;
 }
+
+.details-btn:after {
+  position: absolute;
+  top: 90%; left: 0;
+  width: 100%; height: 100%;
+  background: #C0392B;
+  content: "";
+  z-index: -2;
+  transition: transform .3s;
+}
+
+.details-btn:hover::after {
+  transform: translateY(-80%);
+  transition: transform .3s;
+}
+
+
 
 .name {
   font-size: 18px;
