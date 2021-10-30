@@ -30,12 +30,12 @@ p {
 
 h1 {
   text-align: center;
-  font-family: 'Oswald', Helvetica, sans-serif;
+  font-family: Helvetica, sans-serif;
   font-size: 80px;
   transform: skewY(-10deg);
   letter-spacing: 4px;
   word-spacing: -8px;
-  color: tomato;
+  color: #E74C3C;
   text-shadow: 
     -1px -1px 0 firebrick,
     -2px -2px 0 firebrick,
@@ -119,6 +119,7 @@ input[type="number"] {
   border: 1px solid #ccc;
   border-radius: 5%;
   position: relative;
+  font-family: Helvetica;
   box-shadow: 10px 10px 16px -12px rgba(0, 0, 0, 0.75);
   margin-left: 10px;
   margin-right: 10px;
