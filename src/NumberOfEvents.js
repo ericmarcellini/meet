@@ -8,7 +8,7 @@ class NumberOfEvents extends Component {
   }
 
   updateEventNumber = (eventCount) => {
-    if (eventCount < 1 ){
+    if (eventCount < 0 ){
       return this.setState({
         numberOfEvents: 0,
         errorText: 'Please enter a number greater than 1'
