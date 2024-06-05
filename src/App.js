@@ -6,7 +6,7 @@ import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
 import EventGenre from './EventGenre';
 import { getEvents, extractLocations } from './api';
-import './nprogress.css'; 
+// import './nprogress.css'; 
 import {
   ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
 } from 'recharts';
