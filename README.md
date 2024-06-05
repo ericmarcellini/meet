@@ -25,5 +25,5 @@ Meet App is a Progressive Web Application (PWA) designed to showcase events happ
 - **Styling**: CSS
 - **PWA Features**: Service workers, Web App Manifest
 
-## 
+## Testing Scenarios are listed in this PDF bellow.
 [readme .pdf](https://github.com/ericmarcellini/meet/files/7218545/readme.pdf)
