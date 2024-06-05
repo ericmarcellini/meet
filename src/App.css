@@ -30,23 +30,38 @@ p {
 
 h1 {
   text-align: center;
-  font-family: Helvetica, sans-serif;
-  font-size: 80px;
-  transform: skewY(-10deg);
-  letter-spacing: 4px;
-  word-spacing: -8px;
-  color: #E74C3C;
-  text-shadow: 
-    -1px -1px 0 firebrick,
-    -2px -2px 0 firebrick,
-    -3px -3px 0 firebrick,
-    -4px -4px 0 firebrick,
-    -5px -5px 0 firebrick,
-    -6px -6px 0 firebrick,
-    -7px -7px 0 firebrick,
-    -8px -8px 0 firebrick,
-    -30px 20px 40px dimgrey
+  font-family: 'Roboto', sans-serif;
+  font-size: 60px;
+  font-weight: 500;
+  color: #ffffff; /* Light text color for better contrast */
+  margin: 20px 0;
+  position: relative;
+  padding: 20px 40px;
+  display: inline-block;
+  background: linear-gradient(135deg, #2c3e50 0%, #4a69bd 100%); /* Darker gradient background */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  z-index: 0;
 }
+
+h1:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2); /* Dark overlay for better readability */
+  z-index: -1;
+  transition: opacity 0.3s ease;
+}
+
+h1:hover:before {
+  opacity: 0.4; /* Darker overlay on hover */
+}
+
+
 
 h4 {
   color: white;
@@ -116,17 +131,23 @@ input[type="number"] {
 }
 
 .event {
-  padding: 10px 10px 35px;
-  margin-bottom: 10px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 600px;
   text-align: center;
-  border: 1px solid #ccc;
-  border-radius: 5%;
-  position: relative;
-  font-family: Helvetica;
-  box-shadow: 10px 10px 16px -12px rgba(0, 0, 0, 0.75);
-  margin-left: 10px;
-  margin-right: 10px;
+  border-radius: 8px;
+  /* background-color: #ffffff; */
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: 'Roboto', sans-serif;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
+
+.event:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: translateY(-4px);
+}
+
 
 
 
