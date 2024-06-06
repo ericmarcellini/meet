@@ -2,7 +2,7 @@
 .App {
   text-align: center;
   padding: 2% 5%;
-  background-color: #494949;
+  background-color: #f4f4f4;
 }
 
 .App * {
@@ -12,7 +12,7 @@
 ul {
   padding: 0;
   list-style: none;
-  color: whitesmoke;
+  color: #333;
 }
 
 p {
@@ -69,10 +69,10 @@ h4 {
 }
 
 body {
-  background: radial-gradient(600px at 50% 50%, #f0f0f0 20%, #c0c0c0 100%);
+  background: #f4f4f4;
   font-family: 'Roboto', sans-serif;
   margin: 0;
-  padding: 0;
+  padding: 20px;
 }
 
 input[type="text"],
@@ -116,7 +116,7 @@ input[type="number"] {
 .suggestions > li {
   text-align: left;
   padding: 8px 6px 8px 10px;
-  background-color: #494949;
+  /* background-color: #494949; */
   cursor: default;
 }
 
@@ -136,7 +136,7 @@ input[type="number"] {
   max-width: 600px;
   text-align: center;
   border-radius: 8px;
-  /* background-color: #ffffff; */
+  background-color: #ffffff;
   border: 1px solid #e0e0e0;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   font-family: 'Roboto', sans-serif;
@@ -148,7 +148,13 @@ input[type="number"] {
   transform: translateY(-4px);
 }
 
-
+.EventList {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 20px;
+  padding: 20px;
+  font-family: sans-serif;
+}
 
 
 .Summary {
