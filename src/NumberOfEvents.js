@@ -6,7 +6,14 @@ class NumberOfEvents extends Component {
     locations: [],
     errorText: ''
   }
-
+  /**
+   * Updates the number of events based on user input.
+   * If the input is less than 0, it sets the number of events to 0
+   * and displays an error message. Otherwise, it updates the number
+   * of events with the input value and clears any error message.
+   * Also calls the parent's updateEventNumber method.
+   **/
+  
   updateEventNumber = (eventCount) => {
     if (eventCount < 0 ){
       return this.setState({

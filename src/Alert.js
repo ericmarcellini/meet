@@ -6,6 +6,11 @@ class Alert extends Component {
         this.color = null;
     }
 
+    /**
+     * Returns the style object for the alert text.
+     * The style includes the color property which is set by subclasses.
+     */
+    
     getStyle = () => {
         return {
             color: this.color,
